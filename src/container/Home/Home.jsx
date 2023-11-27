@@ -8,6 +8,7 @@ const Home = () => {
   
   return (
     <div>
+    
       <p className="welcome-msj">
         "Welcome to Johnson Homestead, where I specialize in maximizing the
         value of your property. As your dedicated real estate expert, I am here

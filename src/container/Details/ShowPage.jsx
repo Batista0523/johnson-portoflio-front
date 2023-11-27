@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getItem } from '../../helpers/apicalls';
+import { Link } from 'react-router-dom';
 
 const ShowPage = () => {
   const { id } = useParams();
@@ -25,7 +26,7 @@ const ShowPage = () => {
 
   return (
     <div>
-      <h1>{item.title}</h1>
+      <h2>{item.title}</h2>
       <h4>{item.homeaddress}</h4>
       <img
         src={item.imageurl}
@@ -36,8 +37,14 @@ const ShowPage = () => {
       <p>${item.price}</p>
       <p>Review: {item.review}</p>
       <p>Build Year: {item.builddate}</p>
-      <h5>Contact info: {item.contact}</h5>
       <p>Availability : {item.available ? 'Yes' : 'No'}</p>
+      <h5>Contact info: {item.contact}</h5>
+      <div>
+       <Link to='/edit' >
+        <button>Edit</button>
+       </Link>
+      </div>
+      <div><button>Delete</button></div>
     </div>
   );
 };

@@ -18,6 +18,7 @@ function App() {
           <Route path="/contact" element={<Contact/>}/>
           <Route path='/index' element={<IndexPage/>}/>
           <Route path="/show/:id" element={<ShowPage/>} />
+          <Route path="/edit" element={<Edit/>}/>
         </Routes>
       </Router>
     </div>
