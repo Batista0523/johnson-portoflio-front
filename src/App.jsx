@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
-import { Home, Edit, ShowPage, IndexPage, NewItem, Contact } from "./container";
+import { Home, Edit, ShowPage,IndexPage, NewItem, Contact } from "./container";
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
@@ -16,7 +16,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/create" element={<NewItem />} />
           <Route path="/contact" element={<Contact/>}/>
-          <Route path="/index" element={<IndexPage/>}/>
+          <Route path='/index' element={<IndexPage/>}/>
+          <Route path="/show/:id" element={<ShowPage/>} />
         </Routes>
       </Router>
     </div>
