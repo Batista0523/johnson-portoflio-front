@@ -1,0 +1,33 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #3498db;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 100px;
+  height: 4rem;
+}
+
+
+
+.navbar a {
+  font-family: serif ;
+  color: #fff;
+  text-decoration: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+
+body{
+  margin-top: 50px;
+}
+
