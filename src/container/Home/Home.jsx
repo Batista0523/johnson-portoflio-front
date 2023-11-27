@@ -25,10 +25,10 @@ const Home = () => {
         property while providing a personalized and efficient selling
         experience. Let's showcase your property and accomplishments together."
       </p>
+    
       <div>
         <Testimonial />
       </div>
-      di
     </div>
   );
 };

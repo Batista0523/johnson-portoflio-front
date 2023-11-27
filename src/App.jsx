@@ -16,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/create" element={<NewItem />} />
           <Route path="/contact" element={<Contact/>}/>
+          <Route path="/index" element={<IndexPage/>}/>
         </Routes>
       </Router>
     </div>

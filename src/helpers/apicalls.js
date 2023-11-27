@@ -2,14 +2,29 @@ const URL = import.meta.env.VITE_LOCAL;
 
 const getAllItems = () => {
   return fetch(URL)
-    .then((res) => res, json())
-    .then((json) => json.formData.payload)
+    .then((res) => res.json())
+    .then((json) => {
+      if (json.success && json.data && json.data.payload) {
+        return json.data.payload;
+      } else {
+        console.error("Unexpected response format:", json);
+        throw new Error("Unexpected response format");
+      }
+    })
     .catch((err) => console.error(err));
 };
 
 const getItem = (id) => {
   return fetch(`${URL}/${id}`)
     .then((res) => res.json())
+    .then((json) => {
+      if (json.success && json.data) {
+        return json.data;
+      } else {
+        console.error("Unexpected response format:", json);
+        throw new Error("Unexpected response format");
+      }
+    })
     .catch((err) => console.error(err));
 };
 
@@ -21,6 +36,14 @@ const addItem = (data) => {
   };
   return fetch(URL, options)
     .then((res) => res.json())
+    .then((json) => {
+      if (json.success && json.data) {
+        return json.data;
+      } else {
+        console.error("Unexpected response format:", json);
+        throw new Error("Unexpected response format");
+      }
+    })
     .catch((err) => console.error(err));
 };
 
@@ -31,18 +54,33 @@ const updateItem = (id, data) => {
     headers: { "Content-Type": "application/json" },
   };
 
-  return fetch(`${URL}/${id}`, options);
+  return fetch(`${URL}/${id}`, options)
+    .then((res) => res.json())
+    .then((json) => {
+      if (json.success && json.data) {
+        return json.data;
+      } else {
+        console.error("Unexpected response format:", json);
+        throw new Error("Unexpected response format");
+      }
+    })
+    .catch((err) => console.error(err));
 };
 
 const deleteItem = (id) => {
   const options = {
-    method: "delete",
+    method: "DELETE",
   };
 
-  return fetch(`${URL}/${id}, options`)
+  return fetch(`${URL}/${id}`, options)
     .then((res) => res.json())
     .then((json) => {
-      return json.payload.data.id ? true : false;
+      if (json.success && json.data && json.data.id) {
+        return true;
+      } else {
+        console.error("Unexpected response format:", json);
+        throw new Error("Unexpected response format");
+      }
     })
     .catch((err) => console.error(err));
 };
