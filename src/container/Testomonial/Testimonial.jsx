@@ -27,6 +27,30 @@ const testimonialData = [
     author: "- Sarah Miller, 25",
     review: 5,
   },
+  {
+    title: "Excellent Service!",
+    text: "I had an excellent experience working with Johnson Homestead. Their attention to details, market expertise , and personalized service exceeded my expectations. I highly recommend their services for a smooth and successful property selling journey.",
+    author:'- David Thompson, 35',
+    review:5
+  },
+  {
+    title: "Efficient and Professional",
+    text: "Johnson Homestead is an efficient and professional real estate team. From the initial consultation to the closing, they demonstrated professionalism and expertise. I appreciated their prompt communication and commitment to delivering outstanding results.",
+    author: "- Emily Wilson, 28",
+    review: 4,
+  },
+  {
+    title: "Outstanding Marketing Strategies",
+    text: "Choosing Johnson Homestead was a strategic decision. Their outstanding marketing strategies set our property apart. The team's creativity and attention to detail played a crucial role in attracting potential buyers. I'm grateful for their dedication to achieving the best results.",
+    author: "- Michael Carter, 32",
+    review: 5,
+  },
+  {
+    title: "Exceptional Guidance",
+    text: "Johnson Homestead provided exceptional guidance throughout the selling process. Their expertise and knowledge of the real estate market were invaluable. I felt confident in every decision made, and the outcome exceeded my expectations. Thank you for the outstanding service!",
+    author: "- Jessica Turner, 29",
+    review: 5,
+  }
 ];
 
 const Testimonial = () => {
@@ -42,7 +66,7 @@ const Testimonial = () => {
   return (
     <div>
       <h1 className="testimonial">Testimonials</h1>
-      <Row xs={1} md={2} lg={3} xl={4} className="g-4">
+      <Row  xs={1} md={2} lg={3} xl={4} className="g-4">
         {testimonialData.map((testimonial, index) => (
           <Col key={index}>
             <Card className="testimonial-card" style={{ cursor: "pointer" }}>

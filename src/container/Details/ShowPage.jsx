@@ -26,34 +26,34 @@ const ShowPage = () => {
 
   return (
     <div className="container-fluid mt-4">
-      <div className="row">
-        <div className="col-md-6 mb-3">
+      <div className="row justify-content-center">
+        <div className="col-md-6 mb-4 text-center">
           <img
             src={item.imageurl}
             alt={item.title}
             className="img-fluid"
-            style={{ maxWidth: '100%', maxHeight: '200px' }}
+            style={{ width: '100%', height: 'auto' }}
           />
         </div>
-        <div className="col-md-6 mb-3">
-          <h2 className="mb-3">{item.title}</h2>
-          <h4 className="mb-3">{item.homeaddress}</h4>
-          <p className="mb-3">{item.descriptions}</p>
-          <p className="mb-3">${item.price}</p>
-          <p className="mb-3">Review: {item.review}</p>
-          <p className="mb-3">Build Year: {item.builddate}</p>
-          <p className="mb-3">Availability : {item.available ? 'Yes' : 'No'}</p>
-          <h5 className="mb-3">Contact info: {item.contact}</h5>
+        <div className="col-md-8 mb-4">
+          <h2 className="mb-3 text-center">{item.title}</h2>
+          <h4 className="mb-3 text-center">{item.homeaddress}</h4>
+          <p className="mb-3 text-center">{item.descriptions}</p>
+          <p className="mb-3 text-center">Build Year: {item.builddate}</p>
+          <p className="mb-3 text-center">Availability: {item.available ? 'Yes' : 'No'}</p>
+          <p className="mb-3 text-center">Review: {item.review}</p>
+          <p className="mb-3 text-center">${item.price}</p>
+          <h5 className="mb-3 text-center">Contact info: {item.contact}</h5>
         </div>
       </div>
-      <div className="row">
-        <div className="col-md-6 mb-3">
-          <Link to='/edit'>
-            <button className="btn btn-primary">Edit</button>
+      <div className="row justify-content-center">
+        <div className="col-md-6 mb-3 d-flex justify-content-center align-items-center">
+          <Link to={`/edit/${id}`}>
+            <button className="btn btn-primary btn-lg">Edit</button>
           </Link>
         </div>
-        <div className="col-md-6 mb-3">
-          <button className="btn btn-danger">Delete</button>
+        <div className="col-md-6 mb-3 d-flex justify-content-center align-items-center">
+          <button className="btn btn-danger btn-lg">Delete</button>
         </div>
       </div>
     </div>
@@ -61,4 +61,3 @@ const ShowPage = () => {
 };
 
 export default ShowPage;
-

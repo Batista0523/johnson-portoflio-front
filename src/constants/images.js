@@ -1,6 +1,7 @@
+import window from "../assets/windowc.png";
 
-import window from '../assets/windowc.png'
+
+
 export default {
-   
-    window
-}
+  window,
+};
