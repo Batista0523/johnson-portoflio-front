@@ -17,7 +17,9 @@
     margin-bottom: 20px;
     transition: transform 0.3s ease-in-out; 
   }
-  
+  .navbar-buffer {
+    height: 1rem; 
+  }
   .card:hover {
     transform: scale(1.09);
   }

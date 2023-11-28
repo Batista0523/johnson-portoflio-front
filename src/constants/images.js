@@ -1,5 +1,6 @@
-import logo from '../assets/logoedit2.png';
 
+import window from '../assets/windowc.png'
 export default {
-    logo
+   
+    window
 }
