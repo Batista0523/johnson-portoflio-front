@@ -19,7 +19,7 @@ const getItem = (id) => {
     .then((res) => res.json())
     .then((json) => {
       if (json.id) {
-        return json; 
+        return json;
       } else {
         console.error("Unexpected response format:", json);
         throw new Error("Unexpected response format");
@@ -27,8 +27,6 @@ const getItem = (id) => {
     })
     .catch((err) => console.error(err));
 };
-
-
 
 const addItem = (data) => {
   const options = {
@@ -59,8 +57,8 @@ const updateItem = (id, data) => {
   return fetch(`${URL}/${id}`, options)
     .then((res) => res.json())
     .then((json) => {
-      if (json.success && json.data) {
-        return json.data;
+      if (json.id) {
+        return json;
       } else {
         console.error("Unexpected response format:", json);
         throw new Error("Unexpected response format");
@@ -68,7 +66,7 @@ const updateItem = (id, data) => {
     })
     .catch((err) => {
       console.error(err);
-      throw err; 
+      throw err;
     });
 };
 

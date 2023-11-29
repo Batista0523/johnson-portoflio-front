@@ -44,7 +44,7 @@ const Edit = () => {
     e.preventDefault();
 
     try {
-      await updateItem(id, formData);
+      const response = await updateItem(id, formData);
     } catch (error) {
       console.error("Error updating item:", error);
     }
@@ -162,15 +162,14 @@ const Edit = () => {
             onChange={handleCheckedBoxChange}
           />
         </div>
-        
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
         <Link to="/index" className="btn btn-secondary ms-2">
           Cancel
         </Link>
-    </form>
- </div>
+      </form>
+    </div>
   );
 };
 
