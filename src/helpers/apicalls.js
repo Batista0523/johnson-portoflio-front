@@ -66,7 +66,10 @@ const updateItem = (id, data) => {
         throw new Error("Unexpected response format");
       }
     })
-    .catch((err) => console.error(err));
+    .catch((err) => {
+      console.error(err);
+      throw err; 
+    });
 };
 
 const deleteItem = (id) => {

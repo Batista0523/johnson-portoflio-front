@@ -23,7 +23,7 @@ const IndexPage = () => {
 
   return (
     <div className="container-fluid">
-      <h1 className="mb-4">Property Listing</h1>
+       <h1 className="mb-4 text-center">Properties Listing</h1>
       <div className="row">
         {items.map((item) => (
           <div key={item.id} className="col-lg-4 col-md-6 mb-4">
