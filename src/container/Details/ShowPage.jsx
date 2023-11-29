@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { getItem } from '../../helpers/apicalls';
+import {useParams } from 'react-router-dom';
+import { getItem,deleteItem } from '../../helpers/apicalls';
 import { Link } from 'react-router-dom';
 
 const ShowPage = () => {
   const { id } = useParams();
+  
   const [item, setItem] = useState(null);
 
   useEffect(() => {
@@ -23,6 +24,30 @@ const ShowPage = () => {
   if (!item) {
     return <div>Loading...</div>;
   }
+  const handleDelete = async () => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this item?");
+    if (confirmDelete) {
+      try {
+        const success = await deleteItem(id);
+        if (success) {
+          alert('Item deleted successfully!');
+          
+          window.location.href = '/index';
+        } else {
+          alert('Failed to delete item. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error deleting item:', error);
+        alert('Failed to delete item. Please try again.');
+      }
+    }
+  };
+
+  if (!item) {
+    return <div>Loading...</div>;
+  }
+
+
 
   return (
     <div className="container-fluid mt-4">
@@ -53,7 +78,7 @@ const ShowPage = () => {
           </Link>
         </div>
         <div className="col-md-6 mb-3 d-flex justify-content-center align-items-center">
-          <button className="btn btn-danger btn-lg">Delete</button>
+          <button className="btn btn-danger btn-lg" onClick={handleDelete}>Delete</button>
         </div>
       </div>
     </div>
