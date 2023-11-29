@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import {useParams } from 'react-router-dom';
-import { getItem,deleteItem } from '../../helpers/apicalls';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { getItem, deleteItem } from "../../helpers/apicalls";
+import { Link } from "react-router-dom";
 
 const ShowPage = () => {
   const { id } = useParams();
-  
+
   const [item, setItem] = useState(null);
 
   useEffect(() => {
@@ -15,30 +15,33 @@ const ShowPage = () => {
   const fetchItemDetails = async (itemId) => {
     try {
       const itemDetails = await getItem(itemId);
-      setItem(itemDetails); 
+      setItem(itemDetails);
     } catch (error) {
       console.error("Error fetching item details:", error);
     }
   };
 
+  
   if (!item) {
     return <div>Loading...</div>;
   }
   const handleDelete = async () => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this item?");
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this item?"
+    );
     if (confirmDelete) {
       try {
         const success = await deleteItem(id);
         if (success) {
-          alert('Item deleted successfully!');
-          
-          window.location.href = '/index';
+          alert("Item deleted successfully!");
+
+          window.location.href = "/index";
         } else {
-          alert('Failed to delete item. Please try again.');
+          alert("Failed to delete item. Please try again.");
         }
       } catch (error) {
-        console.error('Error deleting item:', error);
-        alert('Failed to delete item. Please try again.');
+        console.error("Error deleting item:", error);
+        alert("Failed to delete item. Please try again.");
       }
     }
   };
@@ -46,8 +49,6 @@ const ShowPage = () => {
   if (!item) {
     return <div>Loading...</div>;
   }
-
-
 
   return (
     <div className="container-fluid mt-4">
@@ -57,7 +58,7 @@ const ShowPage = () => {
             src={item.imageurl}
             alt={item.title}
             className="img-fluid"
-            style={{ width: '100%', height: 'auto' }}
+            style={{ width: "100%", height: "auto" }}
           />
         </div>
         <div className="col-md-8 mb-4">
@@ -65,7 +66,9 @@ const ShowPage = () => {
           <h4 className="mb-3 text-center">{item.homeaddress}</h4>
           <p className="mb-3 text-center">{item.descriptions}</p>
           <p className="mb-3 text-center">Build Year: {item.builddate}</p>
-          <p className="mb-3 text-center">Availability: {item.available ? 'Yes' : 'No'}</p>
+          <p className="mb-3 text-center">
+            Availability: {item.available ? "Yes" : "No"}
+          </p>
           <p className="mb-3 text-center">Review: {item.review}</p>
           <p className="mb-3 text-center">${item.price}</p>
           <h5 className="mb-3 text-center">Contact info: {item.contact}</h5>
@@ -78,7 +81,9 @@ const ShowPage = () => {
           </Link>
         </div>
         <div className="col-md-6 mb-3 d-flex justify-content-center align-items-center">
-          <button className="btn btn-danger btn-lg" onClick={handleDelete}>Delete</button>
+          <button className="btn btn-danger btn-lg" onClick={handleDelete}>
+            Delete
+          </button>
         </div>
       </div>
     </div>
