@@ -12,7 +12,7 @@ const NavBar = () => {
       <Link to="/">Home</Link>
       <Link to="/contact">Contact Me</Link>
       <Link to="/index">
-        <button>See Our Homes</button>
+        <button>Properties Listing</button>
       </Link>
     </div>
   );

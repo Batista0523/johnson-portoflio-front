@@ -45,6 +45,27 @@ const Edit = () => {
 
     try {
       const response = await updateItem(id, formData);
+      if (response && response.id) {
+       
+        alert("Update successful!");
+  
+        
+        setFormData({
+          title: "",
+          descriptions: "",
+          imageurl: "",
+          builddate: "",
+          contact: "",
+          review: "",
+          available: false,
+          price: "",
+          homeaddress: "",
+        });
+      } else {
+       
+        console.error("Unexpected response format:", response);
+        alert("Update failed. Please try again.");
+      }
     } catch (error) {
       console.error("Error updating item:", error);
     }
@@ -166,8 +187,9 @@ const Edit = () => {
           Submit
         </button>
         <Link to="/index" className="btn btn-secondary ms-2">
-          Cancel
+          Back to Properties Listing
         </Link>
+        
       </form>
     </div>
   );
