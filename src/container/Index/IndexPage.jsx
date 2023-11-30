@@ -1,37 +1,51 @@
-import React, {useState,useEffect} from 'react';
-import { getAllItems } from '../../helpers/apicalls';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { getAllItems } from "../../helpers/apicalls";
+import "./IndexPage.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 const IndexPage = () => {
-    const[items,setItems] = useState([]);
+  const [items, setItems] = useState([]);
 
+  useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const response = await getAllItems();
 
-    useEffect(() => {
-        fetchAllItems();
-    },[])
-    
-    const fetchAllItems = async () => {
-        try{
-            const responde = await getAllItems();
-            setItems(responde);
-        } catch (error) {
-            console.error('Error fetching items', error)
-        }
-    }
+        setItems(response);
+      } catch (error) {
+        console.error("Error fetching items", error);
+      }
+    };
 
-    return (
-        <div>
-        
-            <h1>Porperty Listing</h1>
-            <ul>
-                {items.map((item) => (
-                    <li key={item.id}>
-                     <h3>{item.title}</h3>
-                     <p>{item.descriptions}</p>
-                    </li>
-                ))}
-            </ul>
-            
-        </div>
-    );
-}
+    fetchItems();
+  }, []);
+
+  return (
+    <div className="container-fluid">
+      <h1 className="mb-4 text-center">Properties Listing</h1>
+      <div className="row">
+        {items.map((item) => (
+          <div key={item.id} className="col-lg-4 col-md-6 mb-4">
+            <div className="card">
+              <div className="card-body">
+                <h3>{item.title}</h3>
+                <h4>{item.homeaddress}</h4>
+                <Link to={`/show/${item.id}`}>
+                  <img
+                    src={item.imageurl}
+                    alt={item.title}
+                    className="img-fluid"
+                  />
+                </Link>
+                <p className="mt-2">${item.price}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default IndexPage;

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { images } from "../../constants";
+import { Image } from "react-bootstrap";
 import "./NavBar.css";
 const NavBar = () => {
   return (
@@ -11,7 +12,7 @@ const NavBar = () => {
       <Link to="/">Home</Link>
       <Link to="/contact">Contact Me</Link>
       <Link to="/index">
-        <button>See Our Homes</button>
+        <button>Properties Listing</button>
       </Link>
     </div>
   );
