@@ -37,7 +37,7 @@ const addItem = (data) => {
   return fetch(URL, options)
     .then((res) => res.json())
     .then((json) => {
-      return json; 
+      return json;
     })
     .catch((err) => {
       console.error(err);
@@ -93,6 +93,5 @@ const deleteItem = (id) => {
       throw err;
     });
 };
-
 
 export { getAllItems, getItem, deleteItem, updateItem, addItem };

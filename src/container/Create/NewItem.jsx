@@ -56,7 +56,13 @@ const NewItem = () => {
 
   return (
     <div className="container mt-4">
-      <h2 className="mb-3 text-center">Add New Item</h2>
+       <h2 className="mb-3 text-center">Add New Item</h2>
+      <p>
+        We're excited to learn more about your home! Please enter the details below to share information
+        about your property. Whether you're looking to sell, rent, or just want to document your home,
+        this form is the place to do it. Your input helps us create a comprehensive record of homes in our community.
+      </p>
+      
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="title" className="form-label">

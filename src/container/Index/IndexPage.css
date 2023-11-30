@@ -21,7 +21,7 @@
     height: 1rem; 
   }
   .card:hover {
-    transform: scale(1.09);
+    transform: scale(1.08);
   }
   
   .card-body {

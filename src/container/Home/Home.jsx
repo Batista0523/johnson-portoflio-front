@@ -20,6 +20,7 @@ const Home = () => {
         src={images.window}
         alt="Top Right Image"
       />
+
       <p className="welcome-msj">
         "Welcome to Johnson Homestead Portoflio, where I specialize in
         maximizing the value of your property. As your dedicated real estate
@@ -27,14 +28,15 @@ const Home = () => {
         ensuring you receive the best possible returns on your investment.
         Selling with me means more than just a transaction; it's an opportunity
         to optimize the potential of your property in the current market. To get
-        started, simply enter the information below to create your property
-        details and add it to my exclusive sell list. My comprehensive approach,
-        coupled with strategic marketing and personalized service, sets me apart
-        in the real estate industry. Join the ranks of satisfied clients who
-        have entrusted me with their property sales. Explore my portfolio to see
-        the successful goals and properties I've completed for clients like you.
-        At Johnson Homestead, I am committed to achieving the highest value for
-        your property while providing a personalized and efficient selling
+        started, simply enter the information in 'Maximaze your property's
+        value' in the left corner to create your property details and add it to
+        my exclusive sell list. My comprehensive approach, coupled with
+        strategic marketing and personalized service, sets me apart in the real
+        estate industry. Join the ranks of satisfied clients who have entrusted
+        me with their property sales. Explore my portfolio to see the successful
+        goals and properties I've completed for clients like you. At Johnson
+        Homestead, I am committed to achieving the highest value for your
+        property while providing a personalized and efficient selling
         experience. Let's showcase your property and accomplishments together."
       </p>
 
