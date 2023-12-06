@@ -11,3 +11,4 @@ The Johnson Homestead Hub App serves as a platform to maximize the value of prop
 - **Personalized Selling Experience:** Create and manage property details for a personalized and efficient selling process.
 - **Responsive Design:** The app is designed to work seamlessly on various devices.
 
+backend deployed link https://johnson-homestead-hub.onrender.com/property
