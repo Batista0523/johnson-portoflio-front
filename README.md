@@ -12,3 +12,4 @@ The Johnson Homestead Hub App serves as a platform to maximize the value of prop
 - **Responsive Design:** The app is designed to work seamlessly on various devices.
 
 backend deployed link https://johnson-homestead-hub.onrender.com/property
+Deployed link https://main--scintillating-rabanadas-3f4ae4.netlify.app/
