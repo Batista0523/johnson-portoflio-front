@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const ShowPage = () => {
   const { id } = useParams();
-
   const navigate = useNavigate();
   const [item, setItem] = useState(null);
 
