@@ -1,5 +1,6 @@
 const URL = import.meta.env.VITE_LOCAL;
 
+
 const getAllItems = () => {
   return fetch(URL)
     .then((res) => res.json())
@@ -27,6 +28,7 @@ const getItem = (id) => {
     })
     .catch((err) => console.error(err));
 };
+
 const addItem = (data) => {
   const options = {
     method: "POST",

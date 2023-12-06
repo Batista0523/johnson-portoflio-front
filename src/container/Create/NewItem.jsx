@@ -31,6 +31,7 @@ const NewItem = () => {
       const response = await addItem(formData);
   
       if (response && response.id) {
+        0
         alert('Item added successfully!');
         setFormData({
           title: '',
@@ -167,6 +168,7 @@ const NewItem = () => {
             onChange={handleCheckedBoxChange}
           />
         </div>
+
         <button type="submit" className="btn btn-primary">
           Add Item
         </button>
