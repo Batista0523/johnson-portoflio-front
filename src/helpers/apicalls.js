@@ -1,4 +1,4 @@
-const URL = import.meta.env.VITE_LOCAL;
+const URL = import.meta.env.VITE_LOCAL || import.meta.env.VITE_DEPLOYED
 
 
 const getAllItems = () => {
