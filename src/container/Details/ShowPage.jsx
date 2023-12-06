@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getItem, deleteItem } from "../../helpers/apicalls";
 import { Link } from "react-router-dom";
 
 const ShowPage = () => {
   const { id } = useParams();
 
+  const navigate = useNavigate();
   const [item, setItem] = useState(null);
 
   useEffect(() => {
@@ -21,7 +22,6 @@ const ShowPage = () => {
     }
   };
 
-  
   if (!item) {
     return <div>Loading...</div>;
   }
@@ -34,8 +34,7 @@ const ShowPage = () => {
         const success = await deleteItem(id);
         if (success) {
           alert("Item deleted successfully!");
-
-          window.location.href = "/index";
+          navigate("/index");
         } else {
           alert("Failed to delete item. Please try again.");
         }

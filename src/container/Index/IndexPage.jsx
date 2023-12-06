@@ -11,7 +11,6 @@ const IndexPage = () => {
     const fetchItems = async () => {
       try {
         const response = await getAllItems();
-
         setItems(response);
       } catch (error) {
         console.error("Error fetching items", error);
