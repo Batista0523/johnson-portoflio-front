@@ -1,5 +1,4 @@
-const URL = import.meta.env.VITE_LOCAL || import.meta.env.VITE_DEPLOYED
-
+const URL = import.meta.env.VITE_DEPLOYED
 
 const getAllItems = () => {
   return fetch(URL)
