@@ -1,11 +1,10 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
 import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Home, Edit, ShowPage, IndexPage, NewItem, Contact } from "./container";
 function App() {
-  const [count, setCount] = useState(0);
+
 
   return (
     <div className="app">
